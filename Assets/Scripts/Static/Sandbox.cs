@@ -10,7 +10,6 @@ namespace Static
         private void Awake()
         {
             Calculator.totalOperations += 100;
-
         }
 
         void Start()

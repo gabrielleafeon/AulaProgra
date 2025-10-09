@@ -17,10 +17,7 @@ namespace AulaEnum
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-
-            }
+            
         }
     }
 }

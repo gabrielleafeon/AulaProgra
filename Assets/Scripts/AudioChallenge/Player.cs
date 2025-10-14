@@ -7,7 +7,7 @@ namespace AudioChallenge
 
         void Start()
         {
-            AudioManager.instance.PlayAudio("Ow");
+            AudioManager.Instance.PlayAudio("Ow");
         }
 
         void Update()

@@ -7,9 +7,14 @@ public class MovementRaycast : MonoBehaviour
     public float jumpForce = 6f;
     public float moveForce = 2f;
     public float distanciaRaycast = 1.1f;
+    int layerMask;
+    public LayerMask mask;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        layerMask = (1 << LayerMask.NameToLayer("Ground")) | (1 << LayerMask.NameToLayer("Player"));
+        Debug.Log((int)mask);
     }
 
     void Update()
@@ -19,11 +24,17 @@ public class MovementRaycast : MonoBehaviour
             rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
         }
         if (Input.GetKeyDown(KeyCode.P))
-        {
-
-            if (Physics.Raycast(this.gameObject.transform.position, new Vector3 (0, -1, 0), distanciaRaycast))
+        {          
+            RaycastHit hitInfo;
+            if (Physics.Raycast(this.gameObject.transform.position, Vector3.down, out hitInfo, distanciaRaycast, mask)) // ou usar LayerMask.GetMask("Player", "Ground")
             {
-                Debug.Log("Tocou o chão");
+                GameObject hitObject;
+                hitObject = hitInfo.collider.gameObject;
+                MeshRenderer meshRend;
+                meshRend = hitObject.GetComponent<MeshRenderer>();
+
+                meshRend.material.color = Color.red;
+                Debug.Log($"Tocou o {hitObject.name}, está na layer {hitObject.layer}");
             }
             else
             {

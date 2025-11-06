@@ -332,6 +332,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &678509700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678509702}
+  - component: {fileID: 678509701}
+  m_Layer: 0
+  m_Name: Compare
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &678509701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678509700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa7dfc402a3e9e4586661109ce9f97f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fish:
+    nome: Milani
+    tipoDeAgua: 0
+  penguin:
+    nome: "Jo\xE3o Carlos"
+    numPenas: 0
+    numPatas: 2
+--- !u!4 &678509702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678509700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.69633, y: 0, z: -2.95766}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &762456635
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &853696080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -500,22 +551,40 @@ MonoBehaviour:
   habitatLeao:
     animais:
     - nome: Leao1
-      numPatas: 4
       tamanhoJuba: 2
+      numPatas: 4
     - nome: Leao2
-      numPatas: 4
       tamanhoJuba: 2.5
-    - nome: Leao3
       numPatas: 4
+    - nome: Leao3
       tamanhoJuba: 1
+      numPatas: 4
   habitatPinguim:
     animais:
     - nome: Pinguim1
-      numPatas: 2
       numPenas: 300
-    - nome: Pinguim2
       numPatas: 2
+    - nome: Pinguim2
       numPenas: 400
+      numPatas: 2
+    - nome: Pinguim3
+      numPenas: 400
+      numPatas: 2
+    - nome: Pinguim4
+      numPenas: 400
+      numPatas: 2
+  habitatPeixe:
+    animais:
+    - nome: Peixe1
+      tipoDeAgua: 0
+    - nome: Peixe2
+      tipoDeAgua: 1
+    - nome: Peixe3
+      tipoDeAgua: 1
+    - nome: Peixe4
+      tipoDeAgua: 0
+  habitatMinhoca:
+    animais: []
 --- !u!4 &853696081
 Transform:
   m_ObjectHideFlags: 0
@@ -729,3 +798,4 @@ SceneRoots:
   - {fileID: 762456640}
   - {fileID: 1923817186}
   - {fileID: 853696081}
+  - {fileID: 678509702}

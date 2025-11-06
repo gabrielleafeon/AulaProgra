@@ -18,20 +18,21 @@ namespace Genericos
             return animais[0];
         }
 
+        public T SelecionarAnimal(int num)
+        {
+            if((num < animais.Count) && (num >= 0))
+            {
+                return animais[num];
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public void AdicionarAnimal(T animal)
         {
             animais.Add(animal);
-        }
-
-        public void NumeroDePatas()
-        {
-            int totalPatas = 0;
-
-            foreach(T animal in animais)
-            {
-                totalPatas += animal.numPatas;             
-            }
-            Debug.Log("Número de patas: " + totalPatas);
         }
     }
 

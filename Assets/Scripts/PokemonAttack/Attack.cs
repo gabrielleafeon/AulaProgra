@@ -6,6 +6,7 @@ namespace PokemonAttack
     {
         [SerializeField] AttackData attackData;
         [SerializeField] SpriteSetter spriteSetter;
+        [SerializeField] Pokemon pokemon;
 
         void Start()
         {
@@ -17,6 +18,11 @@ namespace PokemonAttack
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 spriteSetter.SetSprites(attackData);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                attackData.AttackEffect(pokemon);
             }
         }
     }

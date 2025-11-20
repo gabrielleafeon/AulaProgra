@@ -6,14 +6,20 @@ namespace PokemonAttack
     [CreateAssetMenu(fileName = "AttackData", menuName = "Pokémon/Attack")]
     public class AttackData : ScriptableObject
     {
-        [SerializeField] string attackName;
-        [SerializeField] Type type;
-        [SerializeField] int basePower;
-        [SerializeField] AttackCategory category;
-        [SerializeField] int accuracy;
-        [SerializeField] int currentPP;
-        [SerializeField] int maxPP;
-        [SerializeField] string effectDescription;
+        [SerializeField] protected string attackName;
+        [SerializeField] protected Type type;
+        [SerializeField] protected int basePower;
+        [SerializeField] protected AttackCategory category;
+        [SerializeField] protected int accuracy;
+        [SerializeField] protected int currentPP;
+        [SerializeField] protected int maxPP;
+        [SerializeField] protected string effectDescription;
+
+
+        public virtual void AttackEffect(Pokemon pokemon)
+        {
+            Debug.Log("dano");
+        }
 
         public string AttackName
         {
@@ -56,18 +62,7 @@ namespace PokemonAttack
             get => accuracy;
             set
             {
-                if(value <= 0)
-                {
-                    accuracy = 0;
-                }
-                else if(value <= 100)
-                {
-                    accuracy = value;
-                }
-                else if(value > 100)
-                {
-                    accuracy = 101;
-                }
+                accuracy = Mathf.Clamp(value, 0, 101);                
             }
         }
 
@@ -76,18 +71,7 @@ namespace PokemonAttack
             get => currentPP;
             set
             {
-                if(value < 0)
-                {
-                    currentPP = 0;
-                }
-                else if(value <= maxPP)
-                {
-                    currentPP = value;
-                }
-                else if(value > maxPP)
-                {
-                    currentPP = maxPP;
-                }
+                currentPP = Mathf.Clamp(value, 0, maxPP);
             }
         }
 
@@ -96,14 +80,7 @@ namespace PokemonAttack
             get => maxPP;
             set
             {
-                if(value < 1)
-                {
-                    maxPP = 1;
-                }
-                else
-                {
-                    maxPP = value;
-                }
+                maxPP = Mathf.Max(1, value);
             }
         }
 

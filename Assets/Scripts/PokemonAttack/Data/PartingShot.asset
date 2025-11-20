@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45cea73c56fd6348b7a842ce29a65fa, type: 3}
+  m_Name: PartingShot
+  m_EditorClassIdentifier: 
+  attackName: Parting Shot
+  type: 15
+  basePower: 0
+  category: 2
+  accuracy: 100
+  currentPP: 20
+  maxPP: 20
+  effectDescription: The user intimidates targets with a parting threat before rushing
+    back to its Trainer. This lowers targets' Attack and Sp. Atk stats for a short
+    time.

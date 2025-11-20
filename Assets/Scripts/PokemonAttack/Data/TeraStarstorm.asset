@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45cea73c56fd6348b7a842ce29a65fa, type: 3}
+  m_Name: TeraStarstorm
+  m_EditorClassIdentifier: 
+  attackName: Tera Starstorm
+  type: 18
+  basePower: 120
+  category: 1
+  accuracy: 100
+  currentPP: 5
+  maxPP: 5
+  effectDescription: "With the power of its crystals, the user bombards and eliminates
+    the target. When used by Terapagos in its Stellar Form, this move damages all
+    opposing Pok\xE9mon."

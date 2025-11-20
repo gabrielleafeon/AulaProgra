@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45cea73c56fd6348b7a842ce29a65fa, type: 3}
+  m_Name: BlastBurn
+  m_EditorClassIdentifier: 
+  attackName: Blast Burn
+  type: 1
+  basePower: 150
+  category: 1
+  accuracy: 90
+  currentPP: 5
+  maxPP: 5
+  effectDescription: The target is razed by a fiery explosion. The user can't move
+    on the next turn.

@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using System.Collections.Generic;
 
 namespace CourotineLesson
@@ -10,47 +9,37 @@ namespace CourotineLesson
     {
         [SerializeField] string fala;
         [SerializeField] TextMeshProUGUI face;
-        [SerializeField] List<Plataforma> plataformas;
-        [SerializeField] float delayCoroutine;
-        Coroutine coroutin;
+        [SerializeField] int pontos;
+        [SerializeField] Vector3 posInicial;
+        [SerializeField] Color teamColor;
         MeshRenderer meshRend;
+
+
+        public int Pontos { get => pontos; set => pontos = value; }
+        public Vector3 PosInicial { get => posInicial; }
+
+        public Color TeamColor { get => teamColor; }
 
         void Start()
         {
+            posInicial = this.gameObject.transform.position;
             meshRend = this.GetComponent<MeshRenderer>();
-            coroutin = StartCoroutine(NPCCoroutine());
         }
 
-        IEnumerator NPCCoroutine()
+        public IEnumerator Delay()
         {
-            meshRend.material.color = Color.darkGreen;
-            Debug.Log(fala);
+            Debug.Log("Comecei delay");
+            yield return new WaitForSeconds(3f);
+            Debug.Log("Terminei o delay");
+        }
 
-            int lastColor = 2;
-
-            while (true)
-            {
-                yield return new WaitForSeconds(delayCoroutine);
-
-                int currentColor = Random.Range(0, plataformas.Count);
-                if (lastColor != currentColor)
-                {
-                    Plataforma plataforma = plataformas[currentColor];                   
-                    Debug.Log(plataforma.Fala);
-                    yield return new WaitForSeconds(0.5f);
-                    face.text = plataforma.Face;
-                    yield return new WaitForSeconds(0.3f);
-                    meshRend.material.color = plataforma.Cor;
-                    this.transform.position = plataforma.Offset + plataforma.transform.position;
-                    lastColor = currentColor;
-                }
-                else
-                {
-                    Debug.Log("Não mudei de cor :(");
-                    face.text = ":(";
-                }
-            }            
-            
+        public void Mover(Plataforma plataforma)
+        {
+            plataforma.ReduzirUso(this);
+            Debug.Log(plataforma.Fala);
+            face.text = plataforma.Face;
+            meshRend.material.color = plataforma.Cor;
+            this.transform.position = plataforma.Offset + plataforma.transform.position;
         }
     }
 }

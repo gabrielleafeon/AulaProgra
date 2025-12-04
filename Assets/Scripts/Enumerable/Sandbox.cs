@@ -13,6 +13,7 @@ namespace AulaEnumerable
             //IEnumerator enumerator = nums.GetEnumerator();
             IEnumerator enumerator = GenerateNumEnumerator();
             StartCoroutine(enumerator);
+         
         }
 
         IEnumerator GenerateNumEnumerator()

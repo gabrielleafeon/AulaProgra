@@ -20,6 +20,11 @@ namespace AulaDelegates
         
         }
 
+        private void OnDisable()
+        {
+            player.OnPlayerJumped -= Jump;
+        }
+
         void Jump()
         {
             rb.AddForce(0, jumpForce, 0);

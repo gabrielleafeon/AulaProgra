@@ -15,6 +15,7 @@ namespace AulaDelegates
             meshRend = GetComponent<MeshRenderer>();
             player = GetComponent<Player>();
             player.OnPlayerJumped += CreateJumpParticle;
+            player.OnPlayerDeath += CreateDeathParticle;
         }
 
         void Update()
@@ -25,6 +26,7 @@ namespace AulaDelegates
         private void OnDisable()
         {
             player.OnPlayerJumped -= CreateJumpParticle;
+            player.OnPlayerDeath -= CreateDeathParticle;
         }
 
         void CreateJumpParticle()
@@ -38,7 +40,11 @@ namespace AulaDelegates
                 meshRend.material.color = offColor;                
             }
             isOn = !isOn;
+        }
 
+        void CreateDeathParticle()
+        {
+            meshRend.material.color = Color.black;
         }
     }
 }

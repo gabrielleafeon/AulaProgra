@@ -1,10 +1,11 @@
+using System;
 using UnityEngine;
 
 namespace AulaDelegates
 {
     public class Calculadora : MonoBehaviour
     {
-        delegate float Operacao(float num1, float num2);
+        //delegate float Operacao(float num1, float num2);
         public float num1;
         public float num2;
 
@@ -22,7 +23,7 @@ namespace AulaDelegates
         
         }
 
-        float Calcular(float num1, float num2, Operacao op)
+        float Calcular(float num1, float num2, Func<float, float, float> op)
         {
             Debug.Log(op(num1, num2));
             return op(num1, num2);

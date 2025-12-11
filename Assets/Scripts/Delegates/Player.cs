@@ -1,16 +1,18 @@
+using System;
 using UnityEngine;
 
 namespace AulaDelegates
 {
     public class Player : MonoBehaviour
     {
-        public delegate void PlayerHandler();
-
-        public PlayerHandler OnPlayerJumped;
+        public Action OnPlayerJumped;
+        public Action OnPlayerDeath;
+        public Action<int> OnPlayerDamageTaken;
+        public Action<int> OnPlayerHealing;
 
         void Start()
         {
-            
+
         }
 
         void Update()
@@ -18,6 +20,11 @@ namespace AulaDelegates
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 OnPlayerJumped();
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                OnPlayerDeath();
             }
         }
 
